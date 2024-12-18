@@ -1,6 +1,6 @@
 use std::ops::BitXor;
 
-fn isSafe(levels: &Vec<i32>) -> bool {
+fn is_safe(levels: &Vec<i32>) -> bool {
     let increasing: bool = levels[1] - levels[0] > 0;
     for i in 1..levels.len() {
         let dif = levels[i] - levels[i -1];
@@ -11,13 +11,13 @@ fn isSafe(levels: &Vec<i32>) -> bool {
     true
 }
 
-fn couldBeSafe(levels: &Vec<i32>) -> bool {
-    if isSafe(levels) { return true }
+fn could_be_safe(levels: &Vec<i32>) -> bool {
+    if is_safe(levels) { return true }
     for i in 0..levels.len() {
         let subset: Vec<i32> = levels[..i].iter().copied()
             .chain(levels[(i + 1)..].iter().copied())
             .collect();
-        if isSafe(&subset) { return true }
+        if is_safe(&subset) { return true }
     }
     false
 }
@@ -27,7 +27,7 @@ pub(crate) fn part1(input: &str) -> i32 {
     for line in input.lines() {
         let splits: Vec<&str> = line.split(' ').collect();
         let levels: Vec<i32> = splits.iter().map(|&s| s.parse::<i32>().unwrap()).collect();
-        if isSafe(&levels) { count += 1; }
+        if is_safe(&levels) { count += 1; }
     }
     count
 }
@@ -37,7 +37,7 @@ pub(crate) fn part2(input: &str) -> i32 {
     for line in input.lines() {
         let splits: Vec<&str> = line.split(' ').collect();
         let levels: Vec<i32> = splits.iter().map(|&s| s.parse::<i32>().unwrap()).collect();
-        if couldBeSafe(&levels) { count += 1; }
+        if could_be_safe(&levels) { count += 1; }
     }
     count
 }
