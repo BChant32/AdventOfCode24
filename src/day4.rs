@@ -1,6 +1,6 @@
 
 pub(crate) fn part1(input: &str) -> i32 {
-    let trial = "MMMSXXMASM
+    let _trial = "MMMSXXMASM
 MSAMXMSMSA
 AMXSXMAAMM
 MSAMASMSMX
