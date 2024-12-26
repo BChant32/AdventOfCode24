@@ -1,4 +1,4 @@
-pub(crate) fn part1(input_content: &str) -> i32 {
+pub(crate) fn _part1(input_content: &str) -> i32 {
     let mut lefties: Vec<i32> = Vec::<i32>::new();
     let mut righties: Vec<i32> = Vec::<i32>::new();
     input_content.lines().for_each(|line| {
@@ -15,7 +15,7 @@ pub(crate) fn part1(input_content: &str) -> i32 {
     sum
 }
 
-pub(crate) fn part2(input_content: &str) -> i32 {
+pub(crate) fn _part2(input_content: &str) -> i32 {
     let mut lefties: Vec<i32> = Vec::<i32>::new();
     let mut righties: Vec<i32> = Vec::<i32>::new();
     input_content.lines().for_each(|line| {

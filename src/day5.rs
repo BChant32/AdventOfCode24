@@ -9,7 +9,7 @@ fn right_order(rules: &Vec<(u8, u8)>, pages_str: &str) -> u8 {
     pages[(pages.len() - 1) / 2]
 }
 
-pub(crate) fn part1(input: &str) -> i32 {
+pub(crate) fn _part1(input: &str) -> i32 {
     let mut rules: Vec<(u8, u8)> = Vec::new();
     let mut is_header = true;
     let mut sum: i32 = 0;
@@ -29,27 +29,27 @@ pub(crate) fn part1(input: &str) -> i32 {
 
 fn wrong_order(rules: &Vec<(u8, u8)>, pages_str: &str) -> u8 {
     let mut pages: Vec<u8> = pages_str.split(',').map(|i| i.parse::<u8>().unwrap()).collect();
-    let mut isWrong = false;
+    let mut is_wrong = false;
     for (a, b) in rules {
         if pages.contains(a) && pages.contains(b) {
             let pos_a = pages.iter().position(|x| x == a).unwrap();
             let pos_b = pages.iter().position(|x| x == b).unwrap();
             if pos_a > pos_b{
-                isWrong = true;
+                is_wrong = true;
                 break;
             }
         }
     }
-    if !isWrong {return 0;}
+    if !is_wrong {return 0;}
 
-    while isWrong {
-        isWrong = false;
+    while is_wrong {
+        is_wrong = false;
         for (a, b) in rules {
             if pages.contains(a) && pages.contains(b) {
                 let pos_a = pages.iter().position(|x| x == a).unwrap();
                 let pos_b = pages.iter().position(|x| x == b).unwrap();
                 if pos_a > pos_b {
-                    isWrong = true;
+                    is_wrong = true;
                     (pages[pos_a], pages[pos_b]) = (pages[pos_b], pages[pos_a]);
                 }
             }
@@ -58,7 +58,7 @@ fn wrong_order(rules: &Vec<(u8, u8)>, pages_str: &str) -> u8 {
     pages[(pages.len() - 1) / 2]
 }
 
-pub(crate) fn part2(input: &str) -> i32 {
+pub(crate) fn _part2(input: &str) -> i32 {
 
     let mut rules: Vec<(u8, u8)> = Vec::new();
     let mut is_header = true;

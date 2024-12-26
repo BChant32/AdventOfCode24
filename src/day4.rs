@@ -1,5 +1,5 @@
 
-pub(crate) fn part1(input: &str) -> i32 {
+pub(crate) fn _part1(input: &str) -> i32 {
     let _trial = "MMMSXXMASM
 MSAMXMSMSA
 AMXSXMAAMM
@@ -53,7 +53,7 @@ MXMXAXMASX";
     count
 }
 
-pub(crate) fn part2(input: &str) -> i32 {
+pub(crate) fn _part2(input: &str) -> i32 {
     let lines: Vec<Vec<char>> = input.lines().map(|l| l.chars().collect()).collect();
     let width = lines[0].len();
     let height = lines.len();

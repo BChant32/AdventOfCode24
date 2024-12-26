@@ -9,7 +9,7 @@ fn scan_line(line: &str) -> i32 {
     line_sum
 }
 
-pub(crate) fn part1(input: &str) -> i32 {
+pub(crate) fn _part1(input: &str) -> i32 {
     let mut sum: i32 = 0;
     for line in input.lines() {
         sum += scan_line(line);
@@ -32,7 +32,7 @@ fn scan_line_do(line: &str, enabled: &mut bool) -> i32 {
     line_sum
 }
 
-pub(crate) fn part2(input: &str) -> i32 {
+pub(crate) fn _part2(input: &str) -> i32 {
     let mut sum: i32 = 0;
     let mut enabled: bool = true;
     for line in input.lines() {

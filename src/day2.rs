@@ -22,7 +22,7 @@ fn could_be_safe(levels: &Vec<i32>) -> bool {
     false
 }
 
-pub(crate) fn part1(input: &str) -> i32 {
+pub(crate) fn _part1(input: &str) -> i32 {
     let mut count: i32 = 0;
     for line in input.lines() {
         let splits: Vec<&str> = line.split(' ').collect();
@@ -32,7 +32,7 @@ pub(crate) fn part1(input: &str) -> i32 {
     count
 }
 
-pub(crate) fn part2(input: &str) -> i32 {
+pub(crate) fn _part2(input: &str) -> i32 {
     let mut count: i32 = 0;
     for line in input.lines() {
         let splits: Vec<&str> = line.split(' ').collect();
